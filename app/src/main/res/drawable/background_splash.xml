@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Splash theme background color -->
+    <item android:drawable="@color/background_splash"/>
+    <!-- Splash theme image -->
+    <item
+        android:width="250dp"
+        android:height="250dp"
+        android:drawable="@mipmap/ic_launcher"
+        android:gravity="center|center_horizontal|center_vertical"/>
+</layer-list>
