@@ -122,7 +122,7 @@ class SplashViewModel(application: Application): ViewModel() {
     }
 
     // DB에 리스트를 저장하는 메서드
-    private fun insertAll(centerDatas: List<CenterData>) = repository.insertAll(centerDatas)
+    private suspend fun insertAll(centerDatas: List<CenterData>) = repository.insertAll(centerDatas)
 
     // 로그 확인용
     private fun println(data: String) = Log.d("SplashViewModel", data)

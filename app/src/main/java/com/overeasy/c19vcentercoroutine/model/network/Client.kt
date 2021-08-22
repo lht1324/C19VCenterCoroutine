@@ -1,8 +1,10 @@
 package com.overeasy.c19vcentercoroutine.model.network
 
 import android.util.Log
+import com.overeasy.c19vcentercoroutine.model.datasource.pojo.Centers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,7 +21,7 @@ class Client {
         }).build()
 
     // 한 페이지 당 10개씩 가져와야 하니 perPage엔 10을 넣고, serviceKey도 그대로 넣어준다.
-    fun getCentersData(page: Int) = getService().getCenters(page, 10, serviceKey)
+    fun getCentersData(page: Int): Response<Centers> = getService().getCenters(page, 10, serviceKey).execute()
 
     // 레트로핏 인터페이스를 생성한다.
     private fun getService(): RetrofitService = Retrofit.Builder()

@@ -1,8 +1,7 @@
 package com.overeasy.c19vcentercoroutine.model.network
 
 import com.overeasy.c19vcentercoroutine.model.datasource.pojo.Centers
-import io.reactivex.Observable
-import retrofit2.Response
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -16,5 +15,5 @@ interface RetrofitService {
     fun getCenters(
         @Query("page") page: Int,
         @Query("perPage") perPage: Int,
-        @Query("serviceKey", encoded = true) serviceKey: String): Response<Centers>
+        @Query("serviceKey", encoded = true) serviceKey: String): Call<Centers>
 }

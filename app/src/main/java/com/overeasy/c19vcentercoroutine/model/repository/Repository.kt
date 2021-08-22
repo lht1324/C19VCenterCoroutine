@@ -8,9 +8,9 @@ import retrofit2.Response
 
 // Repository의 인터페이스
 interface Repository {
-    fun getCentersData(page: Int): Response<Centers>
+    suspend fun getCentersData(page: Int): Response<Centers>
 
-    fun getSavedCenterDatas(): List<CenterData>
+    suspend fun getSavedCenterDatas(): List<CenterData>
 
-    fun insertAll(centerDatas: List<CenterData>)
+    suspend fun insertAll(centerDatas: List<CenterData>)
 }

@@ -15,11 +15,11 @@ class RepositoryImpl(private val application: Application): Repository {
     }
 
     // client에서 API를 호출해 데이터를 받아온다.
-    override fun getCentersData(page: Int) = client.getCentersData(page)
+    override suspend fun getCentersData(page: Int) = client.getCentersData(page)
 
     // Room DB에 저장된 CenterData 전체를 Single<List<CenterData>>의 형태로 받아온다.
-    override fun getSavedCenterDatas() = vCenterDao.getCenterDatas()
+    override suspend fun getSavedCenterDatas() = vCenterDao.getCenterDatas()
 
     // Room DB에 CenterData의 리스트를 저장할 때 사용된다.
-    override fun insertAll(centerDatas: List<CenterData>) = vCenterDao.insertAll(centerDatas)
+    override suspend fun insertAll(centerDatas: List<CenterData>) = vCenterDao.insertAll(centerDatas)
 }

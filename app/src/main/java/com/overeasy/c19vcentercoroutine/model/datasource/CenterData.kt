@@ -5,7 +5,7 @@ import androidx.room.Ignore
 import com.naver.maps.map.overlay.Marker
 
 // API를 호출해 받아온 데이터를 가공해 저장하는 객체. Room의 Entity로 사용된다.
-@Entity(tableName = "centerDataTable", primaryKeys = ["centerType", "facilityName"])
+@Entity(tableName = "centerDataTable", primaryKeys = ["centerName", "facilityName"])
 class CenterData {
     var lat = 0.0 // 위도
     var lng = 0.0 // 경도
